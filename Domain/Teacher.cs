@@ -1,4 +1,6 @@
-﻿namespace Domain
+﻿using System;
+
+namespace Domain
 {
     public class Teacher
     {
@@ -9,6 +11,12 @@
         {
             FirstName = firstName;
             LastName = lastName;
+
+        }
+
+        public void Teach()
+        {
+            Console.WriteLine("Teach");
         }
     }
 }

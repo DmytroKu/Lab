@@ -19,7 +19,6 @@ namespace Domain
 
         public  void Study()
         {
-            if (StudentID!=null) ;
             Console.WriteLine("Study");
         }
     }

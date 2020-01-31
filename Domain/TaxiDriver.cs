@@ -14,6 +14,11 @@ namespace Domain
             LastName = lastName;
             DriverLicense = driverLicense;
         }
+
+        public void Drive()
+        {
+            Console.WriteLine("Drive");
+        }
     }
 }
 
