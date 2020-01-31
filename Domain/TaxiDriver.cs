@@ -4,9 +4,9 @@ namespace Domain
 {
     public class TaxiDriver
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int DriverLicense { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public int DriverLicense { get; }
 
         public TaxiDriver(string firstName, string lastName, int driverLicense)
         {

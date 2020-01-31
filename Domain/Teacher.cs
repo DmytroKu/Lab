@@ -4,8 +4,8 @@ namespace Domain
 {
     public class Teacher
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
 
         public Teacher(string firstName, string lastName)
         {

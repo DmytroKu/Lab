@@ -1,4 +1,5 @@
 ﻿using System;
+using Domain;
 
 namespace Lab1Dyx
 {
@@ -6,7 +7,7 @@ namespace Lab1Dyx
     {
         static void Main(string[] args)
         {
-            
+            Musician musician = new Musician(new Name(null),new Name(null));
         }
     }
 }
