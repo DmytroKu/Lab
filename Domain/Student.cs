@@ -4,12 +4,12 @@ namespace Domain
 {
     public class Student 
     {
-        public string FirstName { get; }
-        public string LastName { get; }
+        public Name FirstName { get; }
+        public Name LastName { get; }
 
         public long StudentID { get; }
 
-        public Student(string firstName, string lastName, long studentId)
+        public Student(Name firstName, Name lastName, long studentId)
         {
             FirstName = firstName;
             LastName = lastName;

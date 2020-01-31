@@ -4,12 +4,11 @@ namespace Domain
 {
     public class Pupil
     {
-        public string FirstName { get; }
-        public string LastName { get; }
+        public Name FirstName { get; }
+        public Name LastName { get; }
 
-       
 
-        public Pupil(string firstName, string lastName)
+        public Pupil(Name firstName, Name lastName)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -21,4 +20,4 @@ namespace Domain
             Console.WriteLine("Study");
         }
     }
-}
+}S

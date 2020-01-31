@@ -10,8 +10,6 @@ namespace Domain
 
         public Name(string value)
         {
-            if (IsNullOrEmpty(value)) throw new ArgumentException("Value cannot be null or empty.", nameof(value));
-
             Value = value;
         }
     }
