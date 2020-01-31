@@ -1,8 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using static System.String;
-
-namespace Domain
+﻿namespace Domain
 {
     public class Name
     {

@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Teacher
+    public class Teacher:ITrait<CanTeach>
     {
         public Name FirstName { get; }
         public Name LastName { get; }
@@ -13,9 +13,5 @@ namespace Domain
             LastName = lastName;
         }
 
-        public void Teach()
-        {
-            Console.WriteLine("Teach");
-        }
     }
 }

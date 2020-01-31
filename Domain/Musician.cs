@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Musician
+    public class Musician:ITrait<CanPlay>
     {
         public Name FirstName { get; }
         public Name LastName { get; }
@@ -18,5 +18,7 @@ namespace Domain
         {
             Console.WriteLine("Play");
         }
+
+       
     }
 }

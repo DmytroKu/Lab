@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Student 
+    public class Student :ITrait<CanStudy>
     {
         public Name FirstName { get; }
         public Name LastName { get; }
@@ -17,9 +17,6 @@ namespace Domain
         }
 
 
-        public  void Study()
-        {
-            Console.WriteLine("Study");
-        }
+        
     }
 }

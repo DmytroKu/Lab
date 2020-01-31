@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class TaxiDriver
+    public class TaxiDriver:ITrait<CanDrive>
     {
         public Name FirstName { get; }
         public Name LastName { get; }
@@ -15,10 +15,6 @@ namespace Domain
             DriverLicense = driverLicense;
         }
 
-        public void Drive()
-        {
-            Console.WriteLine("Drive");
-        }
     }
 }
 

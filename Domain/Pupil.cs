@@ -2,7 +2,7 @@
 
 namespace Domain
 {
-    public class Pupil
+    public class Pupil:ITrait<CanStudy>
     {
         public Name FirstName { get; }
         public Name LastName { get; }
