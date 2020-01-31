@@ -6,9 +6,9 @@ namespace Domain
     {
         public Name FirstName { get; }
         public Name LastName { get; }
-        public int DriverLicense { get; }
+        public DriverLicense DriverLicense { get; }
 
-        public TaxiDriver(Name firstName, Name lastName, int driverLicense)
+        public TaxiDriver(Name firstName, Name lastName, DriverLicense driverLicense)
         {
             FirstName = firstName;
             LastName = lastName;

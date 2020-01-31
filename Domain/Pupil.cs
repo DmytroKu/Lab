@@ -20,4 +20,4 @@ namespace Domain
             Console.WriteLine("Study");
         }
     }
-}S
+}

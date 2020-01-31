@@ -7,9 +7,9 @@ namespace Domain
         public Name FirstName { get; }
         public Name LastName { get; }
 
-        public long StudentID { get; }
+        public StudentTicket StudentID { get; }
 
-        public Student(Name firstName, Name lastName, long studentId)
+        public Student(Name firstName, Name lastName, StudentTicket studentId)
         {
             FirstName = firstName;
             LastName = lastName;
