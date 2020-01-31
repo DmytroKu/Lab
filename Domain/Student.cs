@@ -2,8 +2,9 @@
 
 namespace Domain
 {
-    public class Student 
+    public class Student :ILearner
     {
+        public IAction Action { get; set; }
         public Name FirstName { get; }
         public Name LastName { get; }
 
@@ -14,12 +15,13 @@ namespace Domain
             FirstName = firstName;
             LastName = lastName;
             StudentID = studentId;
+            Action=new StudyInUniversity();
         }
 
 
         public  void Study()
         {
-            Console.WriteLine("Study");
+            Action.DoAction();
         }
     }
 }

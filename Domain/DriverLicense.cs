@@ -1,4 +1,6 @@
-﻿namespace Domain
+﻿using System;
+
+namespace Domain
 {
     public class DriverLicense
     {   
@@ -6,6 +8,7 @@
 
         public DriverLicense(int license)
         {
+            if (license <= 0) throw new ArgumentOutOfRangeException(nameof(license));
             License = license;
         }
     }

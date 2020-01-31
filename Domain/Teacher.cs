@@ -5,7 +5,7 @@ namespace Domain
     public class Teacher
     {
         public Name FirstName { get; }
-        public Name LastName { get; }
+        public Name LastName { get; }   
 
         public Teacher(Name firstName, Name lastName)
         {
