@@ -29,7 +29,6 @@ namespace Domain
 
     class StudyInUniversity : IAction
     {
-       
         public void DoAction()
         {
             Console.WriteLine("Study in university");
@@ -44,4 +43,35 @@ namespace Domain
         }
     }
 
+    class Teach : IAction
+    {
+        public void DoAction()
+        {
+            Console.WriteLine("Teach");
+        }
+    }
+
+    class Drive : IAction
+    {
+        public void DoAction()
+        {
+            Console.WriteLine("Drive");
+        }
+    }
+
+    class PlayStudent : IAction
+    {
+        public void DoAction()
+        {
+            Console.WriteLine("Playing student");
+        }
+    }
+
+    class PlayMusician : IAction
+    {
+        public void DoAction()
+        {
+            Console.WriteLine("Playing musician");
+        }
+    }
 }

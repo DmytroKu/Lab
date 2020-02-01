@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using static System.String;
 
 namespace Domain
 {
@@ -10,6 +8,8 @@ namespace Domain
 
         public Name(string value)
         {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(value));
             Value = value;
         }
     }

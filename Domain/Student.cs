@@ -1,27 +1,32 @@
-﻿using System;
-
-namespace Domain
+﻿namespace Domain
 {
-    public class Student :ILearner
+    public class Student : ILearner, IPlayer
     {
-        public IAction Action { get; set; }
+        public IAction StudyAction { get; }
+        public IAction PlayAction { get; }
         public Name FirstName { get; }
         public Name LastName { get; }
 
-        public StudentTicket StudentID { get; }
+        public StudentTicket StudentId { get; }
 
         public Student(Name firstName, Name lastName, StudentTicket studentId)
         {
             FirstName = firstName;
             LastName = lastName;
-            StudentID = studentId;
-            Action=new StudyInUniversity();
+            StudentId = studentId;
+            StudyAction = new StudyInUniversity();
+            PlayAction = new PlayStudent();
         }
 
 
-        public  void Study()
+        public void Study()
         {
-            Action.DoAction();
+            StudyAction.DoAction();
+        }
+
+        public void Play()
+        {
+            PlayAction.DoAction();
         }
     }
 }

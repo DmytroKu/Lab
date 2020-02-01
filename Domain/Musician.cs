@@ -1,22 +1,21 @@
-﻿using System;
-
-namespace Domain
+﻿namespace Domain
 {
-    public class Musician
+    public class Musician : IPlayer
     {
+        public IAction PlayAction { get; }
         public Name FirstName { get; }
         public Name LastName { get; }
 
         public Musician(Name firstName, Name lastName)
         {
-
+            PlayAction = new PlayMusician();
             FirstName = firstName;
             LastName = lastName;
         }
 
         public void Play()
         {
-            Console.WriteLine("Play");
+            PlayAction.DoAction();
         }
     }
 }

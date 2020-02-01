@@ -1,9 +1,8 @@
-﻿using System;
-
-namespace Domain
+﻿namespace Domain
 {
     public class TaxiDriver
     {
+        public IAction DriveAction { get; }
         public Name FirstName { get; }
         public Name LastName { get; }
         public DriverLicense DriverLicense { get; }
@@ -13,11 +12,12 @@ namespace Domain
             FirstName = firstName;
             LastName = lastName;
             DriverLicense = driverLicense;
+            DriveAction = new Drive();
         }
 
         public void Drive()
         {
-            Console.WriteLine("Drive");
+            DriveAction.DoAction();
         }
     }
 }
