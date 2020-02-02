@@ -1,6 +1,6 @@
 ﻿namespace Domain
 {
-    public class Pupil
+    public class Pupil : ILearner, IPerson
     {
         public IAction StudyAction { get; }
         public Name FirstName { get; }

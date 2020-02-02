@@ -1,6 +1,6 @@
 ﻿namespace Domain
 {
-    public class Student : ILearner, IPlayer
+    public class Student : ILearner, IPlayer, IPerson
     {
         public IAction StudyAction { get; }
         public IAction PlayAction { get; }

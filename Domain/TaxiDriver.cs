@@ -1,6 +1,6 @@
 ﻿namespace Domain
 {
-    public class TaxiDriver
+    public class TaxiDriver : IDriver, IPerson
     {
         public IAction DriveAction { get; }
         public Name FirstName { get; }
@@ -21,4 +21,3 @@
         }
     }
 }
-

@@ -3,13 +3,14 @@
 namespace Domain
 {
     public class DriverLicense
-    {   
-        public int License { get;  }
+    {
+        public string Code { get; }
 
-        public DriverLicense(int license)
+        public DriverLicense(string code)
         {
-            if (license <= 0) throw new ArgumentOutOfRangeException(nameof(license));
-            License = license;
+            if (string.IsNullOrWhiteSpace(code))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(code));
+            Code = code;
         }
     }
 }

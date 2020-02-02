@@ -1,6 +1,6 @@
 ﻿namespace Domain
 {
-    public class Teacher : ITeacher
+    public class Teacher : ITeacher, IPerson
     {
         public IAction TeachAction { get; }
         public Name FirstName { get; }

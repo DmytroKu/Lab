@@ -1,6 +1,6 @@
 ﻿namespace Domain
 {
-    public class Musician : IPlayer
+    public class Musician : IPlayer, IPerson
     {
         public IAction PlayAction { get; }
         public Name FirstName { get; }
