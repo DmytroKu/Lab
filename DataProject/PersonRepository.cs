@@ -1,17 +1,17 @@
-﻿using System;
+﻿using Domain;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using Domain;
-using Newtonsoft.Json;
 
 namespace Data
 {
-    public class PersonRepository
+    
+
+    public class PersonRepository : IRepository
     {
-        List<IPerson> Read()
+        public List<IPerson> Read()
         {
             var data = new string[0];
             try
@@ -29,7 +29,6 @@ namespace Data
                 var description = data[i];
                 var json = data[i + 1];
                 var type = new string(description.TakeWhile(x => x != ' ').ToArray());
-
                 var personModel = JsonConvert.DeserializeObject<PersonModel>(json);
                 var firstName = new Name(personModel.firstName);
                 var lastName = new Name(personModel.lastName);
@@ -41,6 +40,32 @@ namespace Data
                         list.Add(student);
                         break;
                     }
+                    case "Teacher":
+                    {
+                        var teacher = new Teacher(firstName, lastName);
+                        list.Add(teacher);
+                        break;
+                    }
+                    case "TaxiDriver":
+                    {
+                        var taxiDriver = new TaxiDriver(firstName, lastName,
+                            new DriverLicense(personModel.driverLicenseCode));
+                        list.Add(taxiDriver);
+                        break;
+                    }
+                    case "Pupil":
+                    {
+                        var pupil = new Pupil(firstName, lastName);
+                        list.Add(pupil);
+                        break;
+                    }
+                    case "Musician":
+                    {
+                        var musician = new Musician(firstName, lastName);
+                        list.Add(musician);
+                        break;
+                    }
+
                     default: throw new ArgumentException("Unknown person type");
                 }
             }
@@ -48,7 +73,7 @@ namespace Data
             return list;
         }
 
-        void Write(List<IPerson> list)
+        public void Write(List<IPerson> list)
         {
             var data = new List<string>(list.Count * 2);
             foreach (var person in list)
@@ -63,24 +88,29 @@ namespace Data
                 {
                     case Musician musician:
                     {
+                        data.Add($"Musician {musician.FirstName.Value}{musician.LastName.Value}");
                         break;
                     }
                     case Pupil pupil:
                     {
-                        break;
+                        data.Add($"Pupil {pupil.FirstName.Value}{pupil.LastName.Value}");
+                            break;
                     }
                     case Student student:
                     {
-                        data.Add($"Student {student.FirstName}{student.LastName}");
+                        data.Add($"Student {student.FirstName.Value}{student.LastName.Value}");
                         personModel.studentId = student.StudentId.StudentId;
                         break;
                     }
                     case TaxiDriver taxiDriver:
                     {
+                        data.Add($"Student {taxiDriver.FirstName.Value}{taxiDriver.LastName.Value}");
+                        personModel.driverLicenseCode = taxiDriver.DriverLicense.Code;
                         break;
                     }
                     case Teacher teacher:
                     {
+                        data.Add($"Teacher {teacher.FirstName.Value}{teacher.LastName.Value}");
                         break;
                     }
                     default: throw new ArgumentException("Unknown person type");

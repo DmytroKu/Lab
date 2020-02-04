@@ -28,5 +28,10 @@
         {
             PlayAction.DoAction();
         }
+
+        public override string ToString()
+        {
+            return $"FirstName:{FirstName.Value}\nLastName:{LastName.Value}\nStudentId:{StudentId.StudentId}";
+        }
     }
 }
